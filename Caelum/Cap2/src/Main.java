@@ -1,4 +1,4 @@
-import java.util.Scanner;
+/**import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
@@ -28,7 +28,7 @@ public class Main {
 
 	
 
-public questoes () {
+public static questoes () {
 	switch (opcao) {
 		case 0:
 			System.out.println("Fim do programa!!");
@@ -44,4 +44,4 @@ public questoes () {
 
 	}
 
-}
+} **/
