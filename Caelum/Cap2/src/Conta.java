@@ -1,7 +1,7 @@
 class Conta {
     double saldo;
     int numero;
-    String titular;
+    Cliente titular;
 
     public boolean saca (double valor) {
         if (this.saldo < valor){
