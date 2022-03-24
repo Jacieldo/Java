@@ -1,4 +1,5 @@
 import models.Produto;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
@@ -8,9 +9,7 @@ import db.ProdutosDB;
 public class Main {
 	static ProdutosDB produtosDB = new ProdutosDB();
 	
-
 	public static void main(String[] args) throws Exception {
-		// TODO Auto-generated method stub
 		
 		System.out.println("---PEDIDO DE VENDAS---");
 		
@@ -34,8 +33,11 @@ public class Main {
 			case 1: {
 				Scanner scanner = new Scanner(System.in);
 				
-				System.out.print("Descrição do novo produto:");
+				System.out.print("Descrição do novo produto: ");
 				String descricao = scanner.nextLine();
+				
+				System.out.print("ID do produto: ");
+				int id = scanner.nextInt();
 				
 				System.out.print("Preço: ");
 				double preco = scanner.nextDouble();
@@ -43,12 +45,12 @@ public class Main {
 				System.out.print("Data de validade: ");
 				String dataString = scanner.next();
 				
-				Date dataValidade = new SimpleDateFormat(pattern, "dd/mm/yyyy").parse(dataString);
+				Date dataValidade = new SimpleDateFormat("dd/mm/yyyy").parse(dataString);
 				
 				Produto novoProduto = new Produto(id, descricao, preco, dataValidade);
 				
 				System.out.println("Produto Criado com Sucesso: ");
-				System.out.println("---ID: " + novoProduto.getId());
+				System.out.println("--- ID: " + novoProduto.getId());
 				System.out.println("--- Descrição: " + novoProduto.getDescricao());
 				System.out.println("--- Preço: " + novoProduto.getPreco());
 				System.out.println("--- Data de validade: " + novoProduto.getDataValidade());

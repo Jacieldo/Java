@@ -12,7 +12,7 @@ public class ProdutosDB {
 	}
 	
 	public void addNovoProduto(Produto produto) {
-		produtosList.add(produto);		
+		produtosList.add(produto);	
 	}
 
 }
