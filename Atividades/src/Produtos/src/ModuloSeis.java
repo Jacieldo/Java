@@ -13,7 +13,7 @@ public class ModuloSeis {
 		int numAlunos;
 		int aulas;
 		
-		System.out.print("Quantos aulunos há na turma: "); //NÃO FOI PASSADO INFORMAÇÕES SUFICIENTES PRA "AMARRAR" O PROGRAMA
+		System.out.print("Quantos aulunos há na turma: "); 
 		
 		numAlunos = scanner.nextInt();
 		System.out.print("Quantas aulas: ");
