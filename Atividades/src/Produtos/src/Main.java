@@ -4,10 +4,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
+import com.sun.tools.javac.util.List;
+
 import db.ProdutosDB;
+import db.UsuariosDB;
 
 public class Main {
 	static ProdutosDB produtosDB = new ProdutosDB();
+	static UsuariosDB usuariosDB = new UsuariosDB();
 	
 	public static void main(String[] args) throws Exception {
 		
@@ -17,6 +21,10 @@ public class Main {
 		
 		do {
 			System.out.println("1 - Cadastrar Produto");
+			System.out.println("2 - Listar Produtos Cadastrados");
+			System.out.println("3 - Cadastrar Usuário ADMINISTRADOR");
+			System.out.println("4 - Cadastrar Usuário CLIENTE");
+			System.out.println("5 - Listar todos os Usuários");
 			System.out.println("0 - Sair");
 			
 			Scanner scanner = new Scanner(System.in);
@@ -49,12 +57,37 @@ public class Main {
 				
 				Produto novoProduto = new Produto(id, descricao, preco, dataValidade);
 				
-				System.out.println("Produto Criado com Sucesso: ");
-				System.out.println("--- ID: " + novoProduto.getId());
-				System.out.println("--- Descrição: " + novoProduto.getDescricao());
-				System.out.println("--- Preço: " + novoProduto.getPreco());
-				System.out.println("--- Data de validade: " + novoProduto.getDataValidade());
-				System.out.println("-----------------------------------------");
+				produtosDB.addNovoProduto(novoProduto);
+				break;
+			}
+			
+			case 2: {
+				List<Produto> listaProdutos = produtosDB.getProdutosList();
+				
+				for(Produto produto : listaProdutos) {				
+					System.out.println("--- ID: " + Produto.getId());
+					System.out.println("--- Descrição: " + Produto.getDescricao());
+					System.out.println("--- Preço: " + Produto.getPreco());
+					System.out.println("--- Data de validade: " + Produto.getDataValidade());
+					System.out.println("-----------------------------------------");
+				}
+				break;
+				
+			}
+			
+			case 3: {
+				
+				break;
+			}
+			
+			case 4: {
+				
+				break;
+			}
+			
+			case 5: {
+				
+				break;
 			}
 		
 		}
