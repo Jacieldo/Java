@@ -2,8 +2,9 @@
 public class ContaCorrente extends Conta {
 	private double chequeEspecial;
 
-	public ContaCorrente(int numero, int agencia, String banco, double saldo, double chequeEspecial) {
-		super(numero, agencia, banco, saldo);
+
+	public ContaCorrente(int numero, int agencia, String banco, double saldo, double deposito, double saque, double chequeEspecial) {
+		super(numero, agencia, banco, saldo, deposito, saque);
 		this.chequeEspecial = chequeEspecial;
 	}
 

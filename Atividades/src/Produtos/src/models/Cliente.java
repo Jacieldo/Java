@@ -1,7 +1,7 @@
 package models;
 
 public class Cliente extends Usuario{
-	public Cliente(string nome) {
+	public Cliente(String nome) {
 		super(nome, TipoUsuario.CLIENTE);
 	}
 

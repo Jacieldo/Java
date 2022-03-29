@@ -1,13 +1,17 @@
+import db.ProdutosDB;
+import db.UsuariosDB;
+import models.Admin;
+import models.Cliente;
 import models.Produto;
+import models.Usuario;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
+import java.util.List;
 
-import com.sun.tools.javac.util.List;
 
-import db.ProdutosDB;
-import db.UsuariosDB;
+
 
 public class Main {
 	static ProdutosDB produtosDB = new ProdutosDB();
@@ -65,10 +69,10 @@ public class Main {
 				List<Produto> listaProdutos = produtosDB.getProdutosList();
 				
 				for(Produto produto : listaProdutos) {				
-					System.out.println("--- ID: " + Produto.getId());
-					System.out.println("--- Descrição: " + Produto.getDescricao());
-					System.out.println("--- Preço: " + Produto.getPreco());
-					System.out.println("--- Data de validade: " + Produto.getDataValidade());
+					System.out.println("--- ID: " + produto.getId());
+					System.out.println("--- Descrição: " + produto.getDescricao());
+					System.out.println("--- Preço: " + produto.getPreco());
+					System.out.println("--- Data de validade: " + produto.getDataValidade());
 					System.out.println("-----------------------------------------");
 				}
 				break;
@@ -76,16 +80,38 @@ public class Main {
 			}
 			
 			case 3: {
+				Scanner scanner = new Scanner(System.in);
 				
+				System.out.print("Qual o nome do Usuário ADMIN:");
+				String nome = scanner.nextLine();
+				
+				Admin novoAdmin = new Admin(nome);
+				usuariosDB.addNovoUsuario(novoAdmin);
 				break;
 			}
 			
 			case 4: {
+				Scanner scanner = new Scanner(System.in);
+				
+				System.out.print("Qual o nome do CLIENTE: ");
+				String nome = scanner.nextLine();
+				
+				Cliente novoCliente = new Cliente(nome);
+				usuariosDB.addNovoUsuario(novoCliente);
 				
 				break;
 			}
 			
 			case 5: {
+				System.out.println("-----------------------------------------");
+				System.out.println("------LISTANDO USUÁRIOS CADASTRADOS------");
+				System.out.println("-----------------------------------------");
+				for(Usuario usuario : usuariosDB.getUsuariolist()) {
+					System.out.println("ID: " + usuario.getId());
+					System.out.println("Nome: " + usuario.getNome());
+					System.out.println("Tipo: " + usuario.getTipoUsuario());
+					System.out.println("-----------------------------------------");
+				}
 				
 				break;
 			}

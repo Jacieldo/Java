@@ -4,6 +4,8 @@ public abstract class Conta {
 	private int agencia;
 	private String banco;
 	protected double saldo;
+	protected double deposito;
+	protected double saque;
 	
 	
 	public int getNumero() {
@@ -25,17 +27,40 @@ public abstract class Conta {
 		this.banco = banco;
 	}
 	
+	
+	
 	public abstract double getSaldo();
+	
+	
 	
 	public void setSaldo(double saldo) {
 		this.saldo = saldo;
 	}
-	public Conta(int numero, int agencia, String banco, double saldo) {
+	
+	public void setDeposito(double deposito) {
+		this.deposito = deposito;
+	}
+	
+	public void setSaque(double saque) {
+		this.saque = saque;
+	}
+	
+	public double getDeposito() {
+		return deposito;
+	}
+	
+	public double getSaque() {
+		return saque;
+	}
+	public Conta(int numero, int agencia, String banco, double saldo, double deposito, double saque) {
 		super();
 		this.numero = numero;
 		this.agencia = agencia;
 		this.banco = banco;
 		this.saldo = saldo;
+		this.deposito = deposito;
+		this.saque = saque;
+		
 	}
 	
 	@Override
