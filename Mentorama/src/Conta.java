@@ -3,10 +3,7 @@ public abstract class Conta {
 	private int numero;
 	private int agencia;
 	private String banco;
-	protected double saldo;
-	protected double deposito;
-	protected double saque;
-	
+	protected double saldo = 0;	
 	
 	public int getNumero() {
 		return numero;
@@ -25,42 +22,30 @@ public abstract class Conta {
 	}
 	public void setBanco(String banco) {
 		this.banco = banco;
-	}
-	
-	
-	
-	public abstract double getSaldo();
-	
-	
+	}	
 	
 	public void setSaldo(double saldo) {
 		this.saldo = saldo;
 	}
 	
-	public void setDeposito(double deposito) {
-		this.deposito = deposito;
+	
+	public abstract double getSaldo();
+	
+	
+	//O QUE FOI PEDIDO NA QUESTÃO
+	public abstract boolean sacar(double valor);
+	
+	public void depositar(double valor) {
+		this.saldo += valor;
 	}
 	
-	public void setSaque(double saque) {
-		this.saque = saque;
-	}
-	
-	public double getDeposito() {
-		return deposito;
-	}
-	
-	public double getSaque() {
-		return saque;
-	}
-	public Conta(int numero, int agencia, String banco, double saldo, double deposito, double saque) {
+		
+	public Conta(int numero, int agencia, String banco, double saldo) {
 		super();
 		this.numero = numero;
 		this.agencia = agencia;
 		this.banco = banco;
-		this.saldo = saldo;
-		this.deposito = deposito;
-		this.saque = saque;
-		
+		this.saldo = saldo;		
 	}
 	
 	@Override
@@ -72,6 +57,4 @@ public abstract class Conta {
 				", saldo" + saldo +
 				'}';
 	}
-	
-
 }
