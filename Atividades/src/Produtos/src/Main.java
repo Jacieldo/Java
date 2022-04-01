@@ -1,3 +1,4 @@
+import db.EstoquesDB;
 import db.ProdutosDB;
 import db.UsuariosDB;
 import models.Admin;
@@ -16,6 +17,8 @@ import java.util.List;
 public class Main {
 	static ProdutosDB produtosDB = new ProdutosDB();
 	static UsuariosDB usuariosDB = new UsuariosDB();
+	static EstoquesDB estoquesDB = new EstoquesDB();
+	
 	
 	public static void main(String[] args) throws Exception {
 		
@@ -29,6 +32,7 @@ public class Main {
 			System.out.println("3 - Cadastrar Usuário ADMINISTRADOR");
 			System.out.println("4 - Cadastrar Usuário CLIENTE");
 			System.out.println("5 - Listar todos os Usuários");
+			System.out.println("6 - Cadastrar novo estoque de Produtos");
 			System.out.println("0 - Sair");
 			
 			Scanner scanner = new Scanner(System.in);
@@ -114,6 +118,22 @@ public class Main {
 				}
 				
 				break;
+			}
+			
+			case 6: {
+				Scanner scanner = new Scanner(System.in);
+				System.out.println("-------------------------------------  ----");
+				System.out.println("------CADASTRANDO ESTOQUE DE PRODUTOS------");
+				System.out.println("---------------------------------------  --");
+				
+				System.out.print("Qual o ID do estoque: ");
+				String id = scanner.next();
+				
+				System.out.print("Qual o produto será adicionado (informe o ID): ");
+				int produtoId = scanner.nextInt();
+				
+				Produto produto = produtosDB.getProdutoPorID(produtoId);				
+				break;				
 			}
 		
 		}

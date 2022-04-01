@@ -29,11 +29,15 @@ public abstract class Conta {
 	}
 	
 	
-	public abstract double getSaldo();
+	public double getSaldo() {
+		return this.saldo;
+	}
 	
 	
 	//O QUE FOI PEDIDO NA QUESTÃO
-	public abstract boolean sacar(double valor);
+	public abstract boolean sacar(double valor) {
+		return false;
+	}
 	
 	public void depositar(double valor) {
 		this.saldo += valor;

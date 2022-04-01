@@ -17,9 +17,10 @@ public class TestaConta {
 		Conta contas[] = new Conta[3];
 		
 		ContaCorrente cc = new ContaCorrente(1, 0044, "NuBank", 53.40, 100);
-		ContaPoupanca cp = new ContaPoupanca(1, 001, "BB", 234.43, 26, 0.5);
+		ContaPoupanca cp = new ContaPoupanca(2, 001, "BB", 100, 20, 0.05);
 		ContaSalario cs = new ContaSalario(3, 0003, "Santander", 890, 3);
 		
+		/**
 		contas[0] = cc;
 		contas[1] = cp;
 		contas[2] = cs;
@@ -32,6 +33,14 @@ public class TestaConta {
 			System.out.println("Saldo atual: R$"+conta.getSaldo()); //POLIMORFISMO
 			System.out.println("-----------------------------------");
 		}
+		**/
+		
+		System.out.println(cp);
+		cp.depositar(400);
+		System.out.println(cp);
+		System.out.println("O saldo atual é: " + cp.getSaldo(25));
+		
+		
 		
 		
 	}	
