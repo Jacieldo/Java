@@ -7,7 +7,6 @@ public class Estoque {
 	
 	
 	public Estoque(Produto produto, int quantidade, String id) {
-		super();
 		this.id = id;
 		this.produto = produto;
 		this.quantidade = quantidade;
